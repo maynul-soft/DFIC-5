@@ -12,3 +12,6 @@ New-NetFirewallRule `
 
 
 Get-NetFirewallRule -DisplayName "Splunk Lab Receiver"
+
+
+Restart-Service Splunkd
