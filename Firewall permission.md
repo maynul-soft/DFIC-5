@@ -6,3 +6,9 @@ New-NetFirewallRule `
 -RemoteAddress Any `
 -Profile Any `
 -Action Allow
+
+
+
+
+
+Get-NetFirewallRule -DisplayName "Splunk Lab Receiver"
