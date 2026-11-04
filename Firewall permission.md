@@ -8,10 +8,9 @@ New-NetFirewallRule `
 -Action Allow
 
 
-
-
-
 Get-NetFirewallRule -DisplayName "Splunk Lab Receiver"
+
+Listen: Get-Nettcpconnection -stat Listen -Localhost 9997
 
 
 Restart-Service Splunkd
