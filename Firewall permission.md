@@ -1,3 +1,7 @@
+
+[WinEventLog://Security]
+disabled =0
+
 New-NetFirewallRule `
 -DisplayName "Splunk Lab Receiver" `
 -Direction Inbound `
