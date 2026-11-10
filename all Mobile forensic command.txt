@@ -1,0 +1,44 @@
+=======================Triage=================
+main command: adb shell contenct query --uri
+
+
+Contanct List: adb shell content query --uri content://com.android.contacts/data
+
+	with filter: --projection display_name:data1
+	with filter: --projection <field name>:<field name>:<field name>
+
+calls log: adb shell content query --uri content://call_log/calls
+
+type = 1 = incoming
+type = 2 = outgoing
+type = 3 = missed call
+type = 4 = failed call
+type = 5 = canceled call
+
+with filter: adb shell content query --uri content://call_log/calls --projection date:name:type:duration > call_logs.text
+
+Epoch to bd time
+=TRUNC(B2/86400000)+DATE(1970,1,1) convert date formula
+
+
+logged in account adb query: adb shell dumpsys account
+wifi: adb shell dumpsys wifi
+location: adb shell dumpsys location
+battery info: adb shell dumpsys battery
+user list: adb shell pm list users
+
+default directory: /storage/emulated/0 OR /sdcard
+
+WhatsApp data: /storage/emulated/0/Android/media/com.whatsapp/
+
+Media Pool: adb pull /storage/emulated/0
+
+installed app: adb shell pm list packages 
+externally installed app: adb shell pm list packages -3 -i playstore vending id=  com.android.vending
+
+not match with the app:  adb shell pm list packages -3 -i | where-object {$_-notmatch "com.android.vending"}
+
+
+android path = adb shell pm path <package name>
+
+adb pull <file name>
